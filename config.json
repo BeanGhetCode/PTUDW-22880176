@@ -1,0 +1,30 @@
+{
+  "development": {
+    "username": "ptudwprojectdb",
+    "password": "IDQBNSutq9FZdj89xmPwjTElEP94QgjU",
+    "database": "ptudwprojectdb_gmff",
+    "host": "dpg-coohjdmv3ddc738ols90-a.singapore-postgres.render.com",
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl":{
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    },
+    "port": 5432
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
