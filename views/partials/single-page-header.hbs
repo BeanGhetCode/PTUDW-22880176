@@ -1,0 +1,55 @@
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    var currentPath = window.location.pathname;
+    var pageTitle = '';
+
+    // Check currentPath for specific values
+    if (currentPath === "/shop" ) {
+        pageTitle = "Shop";
+    }
+    else if (currentPath.startsWith("/shop/")) {
+        let parts = currentPath.split("/");
+        if (parts.length === 3 && parts[2]) {
+            let productId = parts[2]; 
+            pageTitle = "Shop Detail";}
+    } else if (currentPath === "/login") {
+        pageTitle = "Login";
+    } else if (currentPath === "/shop-detail") {
+        pageTitle = "Shop Detail";
+    } else if (currentPath === "/cart") {
+        pageTitle = "Cart";
+    } else if (currentPath === "/checkout") {
+        pageTitle = "Checkout";
+    } else if (currentPath === "/testimonial") {
+        pageTitle = "Testimonial";
+    } else if (currentPath === "/contact") {
+        pageTitle = "Contact";
+    } else {
+        pageTitle = "Error";
+    }
+
+    // Update the document title
+    document.title = pageTitle;
+
+    // Update the value of pageTitle in the HTML
+    var pageTitleElement = document.getElementById("page-title");
+    if (pageTitleElement) {
+        pageTitleElement.textContent = pageTitle;
+    }
+    var breadcrumbPageTitleElement = document.getElementById("breadcrumb-page-title");
+    if (breadcrumbPageTitleElement) {
+        breadcrumbPageTitleElement.textContent = pageTitle;
+    }
+});
+
+</script>
+
+<div class="container-fluid page-header py-5">
+    <h1 id="page-title" class="text-center text-white display-6"></h1>
+    <ol class="breadcrumb justify-content-center mb-0">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/">Pages</a></li>
+        <li class="breadcrumb-item active text-white" id="breadcrumb-page-title"></li>
+    </ol>
+</div>
+

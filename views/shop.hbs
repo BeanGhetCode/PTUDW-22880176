@@ -1,0 +1,59 @@
+        <!-- Single Page Header start -->
+        {{>single-page-header}}
+        <!-- Single Page Header End -->
+
+
+        <!-- Fruits Shop Start-->
+        <div class="container-fluid fruite py-5">
+            <div class="container py-5">
+                <h1 class="mb-4">Fresh fruits shop</h1>
+                <div class="row g-4">
+                    <div class="col-lg-12">
+                        <div class="row g-4">
+                            <div class="col-xl-3">
+                            </div>
+                            <div class="col-6"></div>
+                            <div class="col-xl-3">
+                                <div class="bg-light ps-3 py-3 rounded mb-4">
+                                    <label for="sortingOptions">Default Sorting:</label>
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{originalUrl}}&sort=Popularity">Popularity</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{originalUrl}}&sort=Newest">Newest</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{originalUrl}}&sort=Price">Price</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row g-4">
+                            {{> right-left-column}}
+                            <div class="col-lg-9">
+                                <div class="row g-4 justify-content-center">
+                                    {{#each products}}
+                                   <div class="col-md-6 col-lg-4 mb-4">
+                                        {{> product-item}}
+                                    </div>
+
+                                    {{/each}}
+                                </div>
+                                        <div class="pagination d-flex justify-content-center mt-5">               
+                                            {{{createPagination pagination paginationClass="pagination d-flex justify-content-center mt-5"}}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Fruits Shop End-->
+
+
+
+
